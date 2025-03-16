@@ -25,12 +25,6 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         -- import your plugins
-        {
-            "lewis6991/impatient.nvim",
-            config = function()
-                require("impatient")
-            end,
-        },
         { import = "plugins" },
         {
             "stevearc/resession.nvim",
@@ -53,7 +47,15 @@ require("lazy").setup({
                 local lspconfig = require("lspconfig")
 
                 -- Setup each installed LSP
-                lspconfig.lua_ls.setup({})
+                lspconfig.lua_ls.setup({
+                    settings = {
+                        Lua = {
+                            diagnostics = {
+                                globals = { "vim" },
+                            },
+                        },
+                    },
+                })
                 -- lspconfig.ts_ls.setup({})
                 lspconfig.pyright.setup({})
             end,
@@ -78,7 +80,8 @@ require("lazy").setup({
             end,
             dependencies = { { 'nvim-tree/nvim-web-devicons' } }
         },
-        { "akinsho/toggleterm.nvim", version = "*", config = true }
+        { "akinsho/toggleterm.nvim", version = "*", config = true },
+
 
     },
     -- Configure any other settings here. See the documentation for more details.

@@ -111,3 +111,4 @@ vim.keymap.set("n", "<leader>th", function() horizontal_term:toggle() end,
 -- Global Toggle (F6) in All Modes
 vim.keymap.set({ "n", "i", "t" }, "<F7>", "<cmd>ToggleTerm<CR>",
     { noremap = true, silent = true, desc = "Toggle Terminal Visibility" })
+
