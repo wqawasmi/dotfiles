@@ -3,6 +3,7 @@
 - Impatient (for caching)
 - resession (Session management)
 - Mason (LSP plugin management)
+- Snacks (A collection of quality of life ones. Bulk of plugins are in here, see snacks.lua)
 - typescript-tools (Replacement for typescript-language-server)
 - nvm-lspconfig
 - which-key
